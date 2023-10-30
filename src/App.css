@@ -1,0 +1,104 @@
+
+/* App container styles */
+.app-container {
+  font-family: Arial, sans-serif;
+  width: 600px;
+  margin: 20px;
+  height: 800px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Diagnosis form styles */
+.diagnosis-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 20px;
+  height: 100%;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.diagnosis-form label {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 20px;
+  color: #777676;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.diagnosis-form label input{
+  margin: 10px;
+  
+}
+.red{
+  color: rgb(209, 5, 5);
+}
+/* Link styles */
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+.links{
+  bottom: 0;
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.objective-form {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.objective-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.objective-form label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.objective-form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.links {
+  margin-top: 20px;
+}
+
+.links a {
+  margin-right: 15px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.links a:hover {
+  background-color: #0056b3;
+}
