@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 const Channels = ({state, handleChange}) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
-  
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleOptionChange = (e) => {
     const value = e.target.value;
     setSelectedOptions(prevSelectedOptions => {
@@ -17,14 +18,18 @@ const Channels = ({state, handleChange}) => {
 
   
   const handleSubmit = async () => {
+    setIsLoading(true);
+    console.log(isLoading)
     try {
-      const response = await axios.post('http://localhost:3001/completed-form/', state);
+      const response = await axios.post('http://localhost:3001/completed-form', state);
       const result = response.data;
-      handleChange('message', result.message);  // Update global state with the message
+      handleChange('message', result.message);
     } catch (error) {
       console.error('An error occurred:', error);
     }
+    setIsLoading(false);
   };
+  
 
   return (
     <div className="channels-container">
@@ -76,6 +81,12 @@ const Channels = ({state, handleChange}) => {
         {state.objective === 'targeting' && <Link to="/targeting-route">Previous</Link>}
         {state.message && <Link to="/displayMessage">See Recommended Plan</Link>}
       </div>
+      {isLoading && (
+        <div className="loading-container">
+          <div className="loader"></div>
+          <p>We are building your personalized plan...</p>
+        </div>
+      )}
     </div>
   );
 };
