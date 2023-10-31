@@ -16,19 +16,29 @@ const Channels = ({state, handleChange}) => {
     });
   };
 
-  
   const handleSubmit = async () => {
     setIsLoading(true);
-    console.log(isLoading)
     try {
-      const response = await axios.post('http://localhost:3001/completed-form', state);
-      const result = response.data;
-      handleChange('message', result.message);
+      const response = await fetch('http://localhost:3001/completed-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify( state ),
+      });
+  
+      if (response.ok) {
+        const result = await response.json();  // <-- Convert the response to JSON
+        handleChange('message', result.message);
+      } else {
+        console.error('Server responded with status', response.status);
+      }
     } catch (error) {
       console.error('An error occurred:', error);
     }
     setIsLoading(false);
   };
+  
   
 
   return (
