@@ -8,7 +8,7 @@ import Differentiate from './components/Diagnosis/Differentiate';
 import Targeting from './components/Diagnosis/Targeting';
 import Channels from './components/Diagnosis/Channels';
 import './App.css'
-
+import DisplayMessage from './components/Solution/Response';
 const init_state = {
   selectedDiagnosis:'',
   objective:'',
@@ -20,7 +20,9 @@ const init_state = {
   t2:'',
   budget: '',
   timeline: '',
-  additionalInfo: ''
+  additionalInfo: '',
+  selectedOptions:'',
+  message:''
 }
 
 const App = () => {
@@ -49,6 +51,7 @@ const App = () => {
           <Route path='/targeting-route' element={<Targeting handleChange={handleChange} />}/>
           <Route path="/differentiate-route" element={<Differentiate handleChange={handleChange} />} />
           <Route path='/next-link' element={<Channels state={state} handleChange={handleChange} />}/>
+          <Route path='/displayMessage' element={<DisplayMessage message={state.message} />} />
         </Routes>
         </Router>
       </div>

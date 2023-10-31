@@ -102,3 +102,47 @@ a:hover {
 .links a:hover {
   background-color: #0056b3;
 }
+.channels-container {
+  padding: 40px;
+}
+
+.channels-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.channels-label {
+  margin-bottom: 15px;
+}
+
+.channels-button {
+  padding: 10px 20px;
+  background: #535bf2;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.links {
+  margin-top: 20px;
+  text-align: center;
+}
+.message-container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.message-content {
+  font-size: 1.2em;
+  font-weight: bold;
+}
